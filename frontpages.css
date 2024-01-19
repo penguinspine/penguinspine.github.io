@@ -1,0 +1,76 @@
+@media screen and (max-width:600px) {
+
+    .logoimg {
+        color:#FFF;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-right: auto;
+
+    }
+
+    .leftdiv {
+
+        display: flex;
+        flex-direction: column;
+        flex-basis: 5%;
+        width: 0px;
+        background-color: darkgray;
+        height: 4000px;
+        
+    }
+
+    .rightdiv {
+
+       display: flex;
+       flex-direction: column;
+       flex-basis: 95%;
+       margin-top:20px;
+       height: 4000px;
+
+    }
+
+    .headerbanner {
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 3900px;
+        background-color: white;
+        justify-content: center;
+        
+    }
+
+    .mainbox{
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 4000px;
+        padding-right: 50px;
+        
+    }
+    nav .menu li a
+    {
+        position: relative;
+        color:#FFF;
+        font-size: 0.4rem;
+        font-weight: 600;
+        margin-left: 50px;
+        border-radius: 0.7rem;
+        transition: color 0.4 ease;
+    }
+
+    nav .menu li a:hover
+    {
+        color: #FCDBCA;
+    }
+
+    header nav #toggle
+    {
+        font-size: 0.4rem;
+        margin-left: 80px;
+        cursor: pointer;
+    }
+
+}

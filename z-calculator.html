@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protostats</title>
+    <link rel="stylesheet" href="frontpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<style type="text/css">
+    * {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    justify-content: space-between;
+    
+    
+      }
+
+      .wrapper {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin:auto;
+        background-color: lightgrey;
+        overflow: scroll;
+
+
+    }
+
+     .logo {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        min-height: 50px;
+        background: rgba(0, 0, 0, 0.75);
+        background: linear-gradient(90deg,  rgba(0, 0, 0, 0.75),  rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+        background: -moz-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+        background: -webkit-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+        align-items: center;
+        padding: 2%;
+
+     }
+
+     .logoimg
+   {
+        color:#FFF;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-right: auto;
+        
+    
+    }
+
+    .nav
+    {
+        display: flex;
+        align-items: center;
+    }
+
+     nav .menu
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    nav .menu li a
+    {
+        position: relative;
+        color:#FFF;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-left: 40px;
+        border-radius: 0.4rem;
+        transition: color 0.4 ease;
+    }
+
+    nav .menu li a:hover
+    {
+        color: #FCDBCA;
+    }
+
+    header nav #toggle
+    {
+        font-size: 1.3rem;
+        margin-left: 80px;
+        cursor: pointer;
+    }
+
+     
+    .mainbox{
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 1000px;
+        padding-right: 50px;
+        
+    }
+
+    .leftdiv {
+
+        display: flex;
+        flex-direction: column;
+        flex-basis: 20%;
+        background-color: darkgray;
+        height: 1000px;
+        
+    }
+
+    .rightdiv {
+
+       display: flex;
+       flex-direction: column;
+       flex-basis: 75%;
+       margin-top:20px;
+       height: 1000px;
+
+    }
+       
+    .headerbanner {
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 900px;
+        background-color: white;
+        justify-content: center;
+        
+    }
+
+    
+
+    .footer {
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        min-height: 50px;
+        background: rgba(0, 0, 0, 0.75);
+        background: linear-gradient(90deg,  rgba(0, 0, 0, 0.75),  rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+        background: -moz-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+        background: -webkit-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+    }
+
+    .paragraph
+    {
+    
+        font-size: 1.1rem;
+        font-weight: 400;
+        padding-left: 5%;
+        padding-top: 3%;
+        padding-right: 3%;
+        justify-content: center;
+
+
+    }
+
+    .aboutlang {
+
+        padding-left:42%;
+    }
+
+    .sidebar {
+  height: 600px;
+  width: 250px;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  padding-top: 20px;
+  margin: 20px;
+}
+
+.sidebar h2 {
+  color: white;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 15px;
+  text-align: center;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.sidebar a:hover {
+  background-color: blue;
+}
+
+#normal {
+        margin-top: 2em;
+        margin-bottom:2em;
+        }
+        
+        
+
+
+
+@media (max-width:600px) {
+
+.wrapper {
+
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 100vh;
+margin:auto;
+background-color: lightgrey;
+overflow: scroll;
+
+
+}
+
+.logo {
+display: flex;
+flex-direction: row;
+width: 345px;
+min-height: 50px;
+background: rgba(0, 0, 0, 0.75);
+background: linear-gradient(90deg,  rgba(0, 0, 0, 0.75),  rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+background: -moz-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+background: -webkit-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+align-items: center;
+padding: 2%;
+
+}
+
+.logoimg
+{
+color:#FFF;
+font-size: 1rem;
+text-transform: uppercase;
+font-weight: 700;
+margin-right: auto;
+
+
+}
+
+.nav
+{
+display: flex;
+align-items: center;
+}
+
+nav .menu
+{
+display: flex;
+align-items: center;
+}
+
+nav .menu li a
+{
+position: relative;
+color:#FFF;
+font-size: 0.5rem;
+font-weight: 600;
+margin-left: 40px;
+border-radius: 0.4rem;
+transition: color 0.4 ease;
+}
+
+nav .menu li a:hover
+{
+color: #FCDBCA;
+}
+
+header nav #toggle
+{
+font-size: 0.6rem;
+margin-left: 80px;
+cursor: pointer;
+}
+
+
+.mainbox{
+
+display: flex;
+flex-direction: row;
+width: 340px;
+height: 4000px;
+padding-right: 20px;
+
+}
+
+.leftdiv {
+
+display: flex;
+flex-direction: column;
+flex-basis: 0%;
+width: 0px;
+background-color: darkgray;
+height: 0px;
+
+}
+
+.rightdiv {
+
+display: flex;
+flex-direction: column;
+flex-basis: 95%;
+margin-top:20px;
+height: 4000px;
+
+}
+
+.headerbanner {
+
+display: flex;
+flex-direction: row;
+width: 100%;
+height: 3900px;
+background-color: white;
+justify-content: center;
+
+}
+
+
+
+.footer {
+
+display: flex;
+flex-direction: row;
+width: 100%;
+min-height: 50px;
+background: rgba(0, 0, 0, 0.75);
+background: linear-gradient(90deg,  rgba(0, 0, 0, 0.75),  rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+background: -moz-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+background: -webkit-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+justify-content: center;
+align-items: center;
+color: white;
+
+}
+
+
+.paragraph
+{
+
+font-size: 1rem;
+font-weight: 400;
+padding-left: 4%;
+padding-top: 3%;
+padding-right: 3%;
+justify-content: center;
+height: auto;
+width: 340px;
+
+
+}
+
+img {
+
+float: right;
+position: relative;
+right: 10px;
+margin: 20px;
+
+}
+
+.sidebar {
+height: 0%;
+width: 0%;
+top: 0;
+left: 0;
+
+}
+
+.sidebar h2 {
+color: white;
+text-align: center;
+}
+
+.sidebar ul {
+list-style: none;
+padding: 0;
+}
+
+.sidebar li {
+padding: 15px;
+text-align: center;
+}
+
+.sidebar a {
+text-decoration: none;
+color: white;
+font-size: 18px;
+}
+
+.sidebar a:hover {
+background-color: blue;
+}
+
+
+
+}
+
+ 
+
+
+</style>
+</head>
+<body>
+ 
+    <div class="wrapper">
+    <div class="logo">
+
+        <div class="logoimg">
+            Protostats
+        </div>
+        
+        <nav>
+            <ul class="menu">
+                <li><a href="homepage.html" disabled>Home</a></li>
+                <li><a href="z-calculator.html">Z-Calculator</a></li>
+                <li><a href="hypothesis-testing.html">Hypothesis Testing</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <i class="fa-solid fa-bars" id="toggle"></i>
+        </nav>
+    </div>
+    <div class="mainbox">
+        <div class="leftdiv">
+            <div class="sidebar">
+                <h2>CONTENT</h2>
+                <ul>
+                  <li><a href="#WZSC">What is Z-score?</a></li>
+                  <li><a href="#HZSC">How to use Z-calculator?</a></li>
+                  <li><a href="#canvas">Gaussian Distribution Graph</a></li>
+                  <li><a href="homepage.html">Back</a></li>
+                 
+                </ul>
+              </div>
+        </div>
+        <div class="rightdiv">
+            <div class="headerbanner">
+           
+                <div class="paragraph">
+                    <div class="body">
+        
+         
+        
+    
+        
+        <h1>Z-CALCULATOR</h1>
+        <br>
+    
+        <p id="WZSC">What is the z-score?<p>
+        <br>
+        <p>  
+            The z-score, also known as the standard score, z-value, or normal score, is a unitless measure used to express the signed, fractional deviation of an event from the mean of the measured values in terms of standard deviations. Positive z-scores indicate values above the mean, while negative z-scores indicate values below the mean.
+        </p>   
+        <br>
+        <p>
+            To compute the z-score, one subtracts the population mean from the raw score or data point (such as a test score, height, age, etc.) and then divides this difference by the population standard deviation:
+        </p>
+        <br>
+        <p>
+            z= x−μ/σ
+    
+            
+            
+        </p>
+        <br>
+        <p>
+            Here, x is the raw score, μ is the population mean, and  σ is the population standard deviation. For a sample, a similar formula is used, with the sample mean and sample standard deviation replacing the population mean and population standard deviation.
+            The z-score finds diverse applications, including z-tests, prediction interval calculations, utilization in process control, comparison of scores on different scales, and more.
+        </p>
+
+        <br>
+
+        <p id="HZSC">1. Enter a value for the mean, standard deviation, and raw score, then click calculate.</p>
+        
+        
+        <div class="container">
+            <div class="row">         <div class="col-sm-push-3 col-sm-9" id="id-main" role="main">
+        <form class='form-horizontal' id='form1' name='form1' action='/en/calculator/z-calculator' method='get'>        <div class='row'>
+                <div class='col-sm-6 col-xs-12'>
+        <div class="output" id="apDiv2">
+        <br>
+    
+        <div class="form-group">
+        <label for='mean' class="col-sm-4 col-xs-6 control-label"> Mean (μ)</label>
+        <div class='col-sm-3 col-xs-6'> <input name="mean" type="text" class="form-control" id="mean"  value="0" size="8" maxlength="8" onchange="drawGraph()" onclick="this.select()" autofocus>
+         </div>
+          </div>
+        
+        <div class="form-group">
+           <label for='sd' class="col-sm-4 col-xs-6 control-label">Standard deviation (σ) </label>
+          <div class='col-sm-3 col-xs-6'>
+            <input name="sd" type="text" class="form-control" id="sd" value="1" size="8" maxlength="8" onchange="drawGraph()" onclick="this.select()">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for='mean' class="col-sm-4 col-xs-6 control-label"> Raw Score (x)</label>
+            <div class='col-sm-3 col-xs-6'> <input name="mean" type="text" class="form-control" id="rawscore"  value="0" size="8" maxlength="8" onchange="drawGraph()" onclick="this.select()" autofocus>
+             </div>
+              </div>
+              <br>
+              <button onclick="calculates()" >Calculate</button><br>
+              <div id="show2"></div>
+              <div id="show1"></div>
+              <script src="z-calculator.js"></script>
+              <br>
+              <hr>
+        
+              <p id="canvas">2. In order to convert the calculated z-score to probability, click the respective radio button then click calculate. This is equivalent to using a z-table as a reference.</p>
+              <br>
+        
+        
+        
+        <div class='form-group'>
+              <div class='checkbox col-sm-4 col-xs-6'>
+                <label>
+                  <input name="area" type="radio" id="above1" value="above" checked="checked" onclick="drawGraph()">
+                  P(x > z) </label>
+        </div>
+        <div class='col-sm-3 col-xs-6'>
+              <input  name="above" type="text" class="form-control" id="above"  value="-1" size="8" maxlength="8" onchange="drawGraph()" onclick="this.select()">
+        </div>
+        </div>
+        <br>
+        
+        <div class='form-group'>
+            <div class='checkbox col-sm-4 col-xs-6'>
+                <label>
+            <input type="radio" name="area" id="below1" value="below"  onclick="drawGraph()" >
+        
+            P(x < z)
+              </label>
+        
+        </div>
+        <div class='col-sm-3 col-xs-6'>
+        <input name="below" type="text" class="form-control col-sm-3 col-lg-3 col-md-4 col-xs-4" id="below"  value="" size="8" maxlength="8" onchange="drawGraph()" onclick="this.select()" >
+        </div>
+        
+            </div>
+            <br>
+        
+        <div class='form-group'>
+              <div class='checkbox col-sm-4 col-xs-6'>
+                <label>
+                <input type="radio" name="area" id="between" value="between"  onchange="drawGraph()" >
+                (x < P < μ)
+           </label>
+        
+        </div>
+        <div class='col-sm-3 col-xs-6'>
+            <label>x:</label>
+              <input name="ll" type="text" class="form-control" id="ll"  value="" size="8" maxlength="8" onchange="drawGraph()" onclick="this.select()">
+              </div>
+          <div class="col-sm-1 col-xs-6 form-control-static">and</div>
+
+        <div class='col-sm-3 col-xs-6'>
+            <label>μ:</label>
+          <input name="ul" type="text" class="form-control" id="ul" value="" size="8" maxlength="8" onchange="drawGraph()" onclick="this.select()">
+          </div>
+         </div>
+         <br>
+        
+         <div class="form-group">
+            <div class='checkbox col-sm-4 col-xs-6'>
+                <label>
+            <input type="radio" name="area" id="between2"  value="outside" onclick="drawGraph()">
+            ( (P < x),(μ > P) )
+        </label></div>
+        <div class='col-sm-3 col-xs-6'>
+            <label>x:</label>
+              <input name="outsideLL" type="text" class="form-control col-sm-3 col-lg-3 col-md-4 col-xs-4" id="oll"  value="" size="8" maxlength="8" onchange="drawGraph()" onclick="this.select()">
+        </div>
+          <div class="col-sm-1 col-xs-6 form-control-static">and</div>
+        <div class='col-sm-3 col-xs-6'>
+            <label>μ:</label>
+          <input name="outsideUL" type="text" class="form-control col-sm-3 col-lg-3 col-md-4 col-xs-4" id="oul" value="" size="8" maxlength="8" onchange="drawGraph()" onclick="this.select()">
+        </div>
+        </div>
+        <br>
+        
+        <div class='form-group'>
+        <div class='col-sm-3 col-xs-12'>
+            <input class="btn btn-primary btn-large" name="draw" type="submit"  value="Calculate"  >
+            </div>
+        </div>
+            <div id="results">
+              <h3>Result:</h3>
+          Area (probability) = <span class='bold' id="p">0</span>
+        <br ><br>
+        </div>
+        
+        </div></div>
+                <div class='col-sm-6 col-xs-12' ><canvas id="normal" width="300" height="300" ></canvas>
+        </div>
+        </div>
+        
+        
+        
+        <script defer src="/js.js" onload="Init()"></script>
+        <script>
+            function Init()
+            {
+        
+                $(document).ready(function() { $('#id-decile,#id-percentile,#txt1').first().focus();init();drawGraph();
+        
+                $('#listing li a').each( function(){  $(this).attr('href', $(this).attr('href') + '?tag_id=182').attr('rel', 'nofollow');   }); 
+         $("form").submit(function() {
+                                $(this).submit(function() {
+                                    return false;
+                                });
+                                return true;
+                            });
+         });
+            }
+        
+        
+        </script>
+        <script>
+        
+        var ctx,h,w,box
+        
+        var inset = 20
+        
+        function zinv (p) {
+            var t,v,theSign;
+            if (p>=1){
+                return 7;
+            }
+            else if (p<=0) {
+                return -7;
+            }
+            if (p<.5) {
+                t=p;
+                theSign=-1;
+            }
+            else
+            {
+                t=1-p;
+                theSign=1;
+            }
+        
+            v = Math.sqrt(-2.0 * Math.log(t));
+            var x = 2.515517 + (v * ( 0.802853 + v * 0.010328));
+            var y = 1 + (v * (1.432788 + v * (0.189269  + v * 0.001308)));
+            var Q = theSign *(v - (x /y));
+            return Q;
+        }
+        
+        function zProb (z){
+        
+        
+        
+            if (z<-7) {return 0.0;}
+            if (z>7) {return 1.0;}
+        
+        
+            if (z<0.0) {flag= true;}
+            else
+                {flag = false;}
+        
+            z = Math.abs(z);
+            b=0.0;
+            s=Math.sqrt(2)/3*z;
+            HH=.5;
+            for (var i=0;i<12;i++) {
+                a = Math.exp(-HH*HH/9)*Math.sin(HH*s)/HH;
+                b=b+a;
+                HH=HH+1.0;
+            }
+            p= .5-b/Math.PI;
+        //p=b/Math.PI;
+            if (!flag) {p=1.0-p;}
+            return p;
+        }
+        
+        
+        function clearFields() {
+            document.getElementById("belowX").value=""
+            document.getElementById("aboveX").value=""
+            document.getElementById("betweenX").value=""
+            document.getElementById("outsideX").value=""
+        
+        
+        
+        }
+        function rect(x1,y1,x2,y2){
+            this.x1=x1
+            this.x2=x2
+            this.y1=y1
+            this.y2=y2
+        }
+        
+        function linTran(x0,xf,y0,yf) {
+            // finds b and a for transforming from x to y
+            r = new Array(2)
+            r[1]=(yf-y0)/(xf-x0);
+            r[0] = (yf+y0)/2- r[1] * (xf+x0)/2;
+            return r
+        
+        }
+        function init() {
+            canvas = document.getElementById('normal');
+            ctx = canvas.getContext('2d');
+            h = canvas.height
+            w = canvas.width
+            var x1 = inset
+            var x2 = x1+w - 2*inset
+        
+            var y1 = inset
+            var y2 = y1+ h - 2*inset
+            box = new rect(x1,y1,x2,y2);
+        }
+        
+        function drawGraph() {
+        
+            var pField = document.getElementById("p")
+            var M = parseFloat(document.getElementById("mean").value)
+            var sd = parseFloat(document.getElementById("sd").value)
+            var tail = false
+        
+            if(document.form1.area[0].checked) {
+                ll = parseFloat(document.getElementById("above").value)
+                ul=999999
+                z=(M-ll)/sd
+                pField.innerHTML=Math.round(zProb(z)*10000)/10000
+        
+            }
+            else if (document.form1.area[1].checked){
+                ul = parseFloat(document.getElementById("below").value)
+                ll=-999999
+                z=(M-ul)/sd
+                var p = 1-zProb(z)
+                pField.innerHTML=Math.round(p*10000)/10000
+        
+            }
+        
+            else if (document.form1.area[2].checked){
+        
+        
+              ll = parseFloat(document.getElementById("ll").value)
+              ul = parseFloat(document.getElementById("ul").value)
+        
+              z1=(ll-M)/sd
+              z2 = (ul-M)/sd
+              zp = zProb(z2) - zProb(z1)
+              pField.innerHTML=Math.round(zp*10000)/10000
+        
+            }
+            else if (document.form1.area[3].checked){
+            tail = true
+              ll = parseFloat(document.getElementById("oll").value)
+              ul = parseFloat(document.getElementById("oul").value)
+                z1=(ll-M)/sd
+              z2 = (ul-M)/sd
+        
+               zp = zProb(z1) +(1- zProb(z2))
+              pField.innerHTML=Math.round(zp*10000)/10000
+        
+        
+            }
+        
+            if(sd<=0) return
+        
+        
+        
+        
+        
+        
+            ctx.clearRect(0,0,w,h)
+            ctx.fillStyle="#e1eEED"
+            ctx.fillRect(0,0,w,h)
+        
+            drawNormal(ctx,box,M,sd,ll,ul,tail) //canvas, bounds, mean, standard deviation, lower limit, upper limit, tail (outside or inside)
+        
+        }
+        function inverse() {
+            clearFields()
+            var ll, ul, x1,x2
+            var M = parseFloat(document.getElementById("mean1").value)
+            var sd = parseFloat(document.getElementById("sd1").value)
+            ctx.clearRect(0,0,w,h)
+            tail = false
+        
+            var p = parseFloat(document.getElementById("p2").value)
+            var x1 = zinv(p)
+            x1=M+sd*x1
+        
+        
+        
+        
+            if (document.form1.area1[0].checked) {
+                x1 = zinv(p)
+                x1=-M+sd*x1
+                ul=M+3.1*sd
+                ll=-x1
+                drawNormal(ctx,box,M,sd,ll,ul,tail)
+                ll = Math.round(1000*ll)/1000
+        
+                document.getElementById("aboveX").value=ll
+            }
+            else if (document.form1.area1[1].checked){
+                ll=M-3.1*sd
+                ul=x1
+                drawNormal(ctx,box,M,sd,ll,ul,tail)
+                ul = Math.round(1000*ul)/1000
+                document.getElementById("belowX").value=ul
+        
+            }
+        
+            else if (document.form1.area1[2].checked){
+                var p2=p/2
+                x1=zinv(.5-p2)
+                ll=x1
+                ul=-x1
+                ll=Math.round((M+sd*ll)*1000)/1000
+                ul=Math.round((M+sd*ul)*1000)/1000
+                drawNormal(ctx,box,M,sd,ll,ul,tail)
+                document.getElementById("betweenX").value=ll + " and " + ul
+        
+        
+            }
+            else if (document.form1.area1[3].checked){
+                /*var p2=p/2
+                x1=zinv(p2)
+                ll=x1
+                ul=-x1
+                drawNormal(ctx,box,M,sd,ll,ul,true)
+                */
+                var p2=p/2
+                x1=zinv(p2)
+                ll=x1
+                ul=-x1
+                ll=Math.round((M+sd*ll)*1000)/1000
+                ul=Math.round((M+sd*ul)*1000)/1000
+                drawNormal(ctx,box,M,sd,ll,ul,true)
+                document.getElementById("outsideX").value=ll + " and " + ul
+        
+            }
+        }
+        
+        function drawNormal(ctx,box,M,sd,lFill,hFill, tail) {
+            ctx.beginPath()
+        
+            var w = box.x2-box.x1
+            var h = box.y2-box.y1
+        
+        
+            //ctx.fillRect(b.x1,b.y1,w,h)
+        
+            var v = sd*sd
+            var constant = 1/Math.sqrt(2*Math.PI*v)
+            var x=M
+        
+            var maxDensity = constant
+        
+            var r = linTran(0,1.1*maxDensity,h,box.y1)
+        
+              var Ay=r[0]
+              var by=r[1]
+        
+        
+            var lowX = M - 3.5*sd
+            var highX = M + 3.5*sd
+        
+            var r = linTran(lowX,highX,box.x1,box.x2)
+        
+               var Ax=r[0]; var bx=r[1]
+        
+        
+               var x0 = lowX*bx+Ax
+            var xf=highX*bx+Ax
+        
+           ctx.moveTo(xf,Ay)
+           ctx.lineTo(x0,Ay)
+        
+            var inc = 1/bx
+        
+           var dmax = 0
+        
+        
+        
+           for (var i=lowX;i<=highX;i+=inc*.5){
+                  xp=bx*i +Ax
+                d =  constant*Math.exp(-Math.pow((i-M),2)/(2*v))
+                dmax = Math.max(dmax,d)
+        
+                dp= by*d+Ay
+        
+        
+                //height in pixels
+        
+                ctx.lineTo(xp,dp)
+        
+        
+                if (tail) {
+        
+                    if(i>=hFill || i <= lFill) {
+        
+                    ctx.moveTo(xp,Ay)
+                    ctx.lineTo(xp,dp+1)
+        
+        
+                }
+        
+        
+        
+                }
+        
+                else
+                  if(i<=hFill && i >=lFill) {
+                      ctx.moveTo(xp,Ay)
+                      ctx.lineTo(xp,dp+1)
+                  }
+            }
+        
+            ctx.textAlign = "center";
+            ctx.font = "14px Courier sans-serif";
+            ctx.strokeStyle = "#2983E3"
+        
+            y = Ay+ 15
+            ctx.fillStyle = "black";
+            for (var i = M - 3*sd;i<=M+3*sd;i+=sd) {
+                x=bx*i+Ax
+                ctx.moveTo(x,Ay)
+                ctx.lineTo(x,Ay+4)
+                var xlab = Math.round(1000*i)
+                xlab=xlab/1000
+                ctx.fillText(xlab, x, y+2);
+            }
+            ctx.stroke();
+            //ctx.closePath()
+        
+        
+        }
+        </script>
+                        
+                
+                </form>
+                </div>
+                </div>
+                
+                
+
+            
+            </div>
+        </div>
+    </div>
+    <div class="footer">PROTOSTATS 2024</div>
+    <!-- Credits to HackMath.net 2024 -->
+    <!-- No Infringement Intended -->
+
+</body>
+</html>

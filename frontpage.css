@@ -1,0 +1,133 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+}
+
+
+body
+{
+    min-height: 100vh;
+    min-width: 400px;
+    overflow:hidden;
+   
+}
+
+.banner
+{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(Untitled\ design.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+header
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 110px;
+    padding: 0 5%;
+    color:#FCDBCA;
+    font-size: 18px;
+}
+
+header .logo
+{
+    color:#FFF;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-right: auto;
+    
+}
+
+header nav
+{
+    display: flex;
+    align-items: center;
+}
+
+header nav .menu
+{
+    display: flex;
+    align-items: center;
+}
+
+header nav .menu li a
+{
+    position: relative;
+    color:#FFF;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: 40px;
+    border-radius: 0.4rem;
+    transition: color 0.4 ease;
+}
+
+header nav .menu li a:hover
+{
+    color: #FCDBCA;
+}
+
+header nav #toggle
+{
+    font-size: 1.3rem;
+    margin-left: 80px;
+    cursor: pointer;
+}
+
+.home
+{
+    padding: 0 5%;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.home h1
+{
+    margin-top: 50px;
+    text-transform: uppercase;
+    font-size: 3.25rem;
+    font-weight: 600;
+}
+
+.home p
+{
+    font-size: 0.85rem;
+    width: 600px;
+    font-weight: 300;
+    margin: -5px auto 25px;
+    text-align: center;
+}
+
+.home button
+{
+    background:#FFF;
+    padding: 0.3rem 1.5rem ;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    color:#000;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease,  color 0.3s ease;
+}
+
+.home button:hover
+{
+    background: transparent;
+    border-color: #FCDBCA;
+    color:#FFF;
+}
+

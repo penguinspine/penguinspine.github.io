@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protostats</title>
+    <link rel="stylesheet" href="frontpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {
+            loader: {load: ['[tex]/ams']},
+            tex: {packages: {'[+]': ['ams']}}
+        };
+        </script>
+        <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+                },
+                svg: {
+                fontCache: 'global'
+                }
+            };
+        </script> 
+         
+<style type="text/css">
+    * {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    justify-content: space-between;
+    
+    
+      }
+
+      .wrapper {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin:auto;
+        background-color: lightgrey;
+        overflow: scroll;
+
+
+    }
+
+     .logo {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        min-height: 50px;
+        background: rgba(0, 0, 0, 0.75);
+        background: linear-gradient(90deg,  rgba(0, 0, 0, 0.75),  rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+        background: -moz-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+        background: -webkit-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+        align-items: center;
+        padding: 2%;
+
+     }
+
+     .logoimg
+   {
+        color:#FFF;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-right: auto;
+        
+    
+    }
+
+    .nav
+    {
+        display: flex;
+        align-items: center;
+    }
+
+     nav .menu
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    nav .menu li a
+    {
+        position: relative;
+        color:#FFF;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-left: 40px;
+        border-radius: 0.4rem;
+        transition: color 0.4 ease;
+    }
+
+    nav .menu li a:hover
+    {
+        color: #FCDBCA;
+    }
+
+    header nav #toggle
+    {
+        font-size: 1.3rem;
+        margin-left: 80px;
+        cursor: pointer;
+    }
+
+     
+    .mainbox{
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 1000px;
+        padding-right: 50px;
+        
+    }
+
+    .leftdiv {
+
+        display: flex;
+        flex-direction: column;
+        flex-basis: 20%;
+        background-color: darkgray;
+        height: 1000px;
+        
+    }
+
+    .rightdiv {
+
+       display: flex;
+       flex-direction: column;
+       flex-basis: 75%;
+       margin-top:20px;
+       height: 1000px;
+
+    }
+       
+    .headerbanner {
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 900px;
+        background-color: white;
+        justify-content: center;
+        
+    }
+
+    
+
+    .footer {
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        min-height: 50px;
+        background: rgba(0, 0, 0, 0.75);
+        background: linear-gradient(90deg,  rgba(0, 0, 0, 0.75),  rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+        background: -moz-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+        background: -webkit-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+    }
+
+    .paragraph
+    {
+    
+        font-size: 1.1rem;
+        font-weight: 400;
+        padding-left: 5%;
+        padding-top: 3%;
+        padding-right: 3%;
+        justify-content: center;
+
+
+    }
+
+    .aboutlang {
+
+        padding-left:42%;
+    }
+
+    .sidebar {
+  height: 600px;
+  width: 250px;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  padding-top: 20px;
+  margin: 20px;
+}
+
+.sidebar h2 {
+  color: white;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 15px;
+  text-align: center;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.sidebar a:hover {
+  background-color: blue;
+}
+
+
+@media (max-width:600px) {
+
+.wrapper {
+
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 100vh;
+margin:auto;
+background-color: lightgrey;
+overflow: scroll;
+
+
+}
+
+.logo {
+display: flex;
+flex-direction: row;
+width: 345px;
+min-height: 50px;
+background: rgba(0, 0, 0, 0.75);
+background: linear-gradient(90deg,  rgba(0, 0, 0, 0.75),  rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+background: -moz-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+background: -webkit-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+align-items: center;
+padding: 2%;
+
+}
+
+.logoimg
+{
+color:#FFF;
+font-size: 1rem;
+text-transform: uppercase;
+font-weight: 700;
+margin-right: auto;
+
+
+}
+
+.nav
+{
+display: flex;
+align-items: center;
+}
+
+nav .menu
+{
+display: flex;
+align-items: center;
+}
+
+nav .menu li a
+{
+position: relative;
+color:#FFF;
+font-size: 0.5rem;
+font-weight: 600;
+margin-left: 40px;
+border-radius: 0.4rem;
+transition: color 0.4 ease;
+}
+
+nav .menu li a:hover
+{
+color: #FCDBCA;
+}
+
+header nav #toggle
+{
+font-size: 0.6rem;
+margin-left: 80px;
+cursor: pointer;
+}
+
+
+.mainbox{
+
+display: flex;
+flex-direction: row;
+width: 340px;
+height: 4000px;
+padding-right: 20px;
+
+}
+
+.leftdiv {
+
+display: flex;
+flex-direction: column;
+flex-basis: 0%;
+width: 0px;
+background-color: darkgray;
+height: 0px;
+
+}
+
+.rightdiv {
+
+display: flex;
+flex-direction: column;
+flex-basis: 95%;
+margin-top:20px;
+height: 4000px;
+
+}
+
+.headerbanner {
+
+display: flex;
+flex-direction: row;
+width: 100%;
+height: 3900px;
+background-color: white;
+justify-content: center;
+
+}
+
+
+
+.footer {
+
+display: flex;
+flex-direction: row;
+width: 100%;
+min-height: 50px;
+background: rgba(0, 0, 0, 0.75);
+background: linear-gradient(90deg,  rgba(0, 0, 0, 0.75),  rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+background: -moz-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+background: -webkit-linear-gradient(90deg,  rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 45%,  rgba(0, 0, 0, 0.75) 49%,  rgba(0, 0, 0, 0.75) 62%,  rgba(0, 0, 0, 0.75) 100%);
+justify-content: center;
+align-items: center;
+color: white;
+
+}
+
+
+.paragraph
+{
+
+font-size: 1.1rem;
+font-weight: 400;
+padding-left: 4%;
+padding-top: 3%;
+padding-right: 3%;
+justify-content: center;
+height: auto;
+width:auto;
+
+
+}
+
+img {
+
+float: right;
+position: relative;
+right: 10px;
+margin: 20px;
+
+}
+
+.sidebar {
+height: 0%;
+width: 0%;
+top: 0;
+left: 0;
+
+}
+
+.sidebar h2 {
+color: white;
+text-align: center;
+}
+
+.sidebar ul {
+list-style: none;
+padding: 0;
+}
+
+.sidebar li {
+padding: 15px;
+text-align: center;
+}
+
+.sidebar a {
+text-decoration: none;
+color: white;
+font-size: 18px;
+}
+
+.sidebar a:hover {
+background-color: blue;
+}
+
+
+
+}
+
+ 
+
+
+</style>
+
+</head>
+<body>
+  <div class="backgroundimg">
+    <div class="wrapper">
+    <div class="logo">
+
+        <div class="logoimg">
+            Protostats
+        </div>
+        
+        <nav>
+            <ul class="menu">
+                <li><a href="homepage.html" disabled>Home</a></li>
+                <li><a href="z-calculator.html">Z-Calculator</a></li>
+                <li><a href="hypothesis-testing.html">Hypothesis Testing</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <i class="fa-solid fa-bars" id="toggle"></i>
+        </nav>
+    </div>
+    <div class="mainbox">
+        <div class="leftdiv">
+          <div class="sidebar">
+            <h2>CONTENT</h2>
+            <ul>
+              <li><a href="#THP">What is Traditional Hypothesis Testing?</a></li>
+              <li><a href="#Steps">Steps in Hypothesis Testing</a></li>
+              <li><a href="#xx">Errors</a></li>
+              <li><a href="homepage.html">Back</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="rightdiv">
+            <div class="headerbanner">
+                <div class="paragraph">
+                    <h1>HYPOTHESIS TESTING</h1>
+                    <br>
+
+                    <div class="body">
+                      <div class="note">
+
+                      <p >NOTE! This website only employ traditional method of hypothesis testing.</p>
+                      </div>
+
+                        <br>
+                          
+                          
+       
+                        <div class="container">
+                          <hr>
+                              </div>
+                          
+                          
+                          
+                          <div class="container" id="hypothesis">
+                              
+                            <table>
+                              <tr>
+                                <td class="statistics" data-toggle="tooltip" data-placement="top" title="Null Hypothesis">$H_o$: </td>
+                                <td class="statistics"><select id="parameter1" class="hypinput1" onchange="parameter()"> <option value="mean"> &mu; </option></select></td> 
+                                <td class="statistics"> <select id="tail" class="hypinput1" onchange="tailsigns()"> <option value="lower"> &#8805; </option> <option value="upper"> &#8804;     </option> <option value="two">=</option> </select></td>
+                                <td class="statistics"> <input type="text" style="width:40px;" id="muknot" class="hypinput2" oninput="muknotval()" placeholder=""> <span id = "muknottest">&mu;₀</span> </td>
+                              </tr>
+                              <tr>
+                                <td class="statistics" data-toggle="tooltip" data-placement="top" title="Alternative Hypothesis">$H_a$: </td>
+                                <td class="statistics"> <span id = "parameter2">&mu;</span></td>
+                                <td class="statistics"> <span id = "less"> < </span> <span id = "greater"> > </span> <span id = "notequal"> &ne; </span></td>
+                                <td class="statistics" style="text-align:left">&thinsp; <span id = "muknotvalue">&mu;₀</span></td>
+                              </tr>
+                            </table>
+                              
+                              <div id="valuesinput">
+                              <table class = "mt-2">
+                              <tr>
+                                <td class="statistics" data-toggle="tooltip" data-placement="top" title="Sample Size">$n$</td>
+                                <td class="statistics"> = </td>
+                                <td class="statistics"><input type="text" style="width:50px;" id="size" class="hypinput2"></td>
+                                <td class="statistics">&nbsp;</td>
+                                <td class="statistics" data-toggle="tooltip" data-placement="top" title="Sample Statistic"><span id = "samplestat">$\bar{x}$</span></td>
+                                <td class="statistics"> = </td>
+                                <td class="statistics"><input type="text" style="width:50px;" id="xbar" class="hypinput2"></td>
+                                <td class="statistics">&nbsp;</td>
+                                <td class="statistics" data-toggle="tooltip" data-placement="top" title="Standard Deviation" id="sd1"><select id="sigma" class="hypinput1"> <option value="known"> &#963; </option></select></td>
+                                <td class="statistics" id="sd2"> = </td>
+                                <td class="statistics" id="sd3"><input type="text" style="width:50px;" id="stdev" class="hypinput2"></td>
+                                <td class="statistics"></td>
+                                <td class="statistics">
+                                <svg onclick="switchdata()" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-shuffle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"/>
+                                  <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"/>
+                                </svg>
+                                </td>
+                              </tr>
+                            </table> 
+                              </div>
+                              
+                              <div class="container center mt-2" id="datainput">      
+                                 <table class = "mt-2">
+                              <tr>
+                                <td class="statistics"> <input type="text" class="form-control" id="xvalues" placeholder="Enter Values"  size="30"> </td>
+                                <td class="statistics"></td>
+                                <td class="statistics">
+                                    <svg onclick="switchtest()" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-shuffle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"/>
+                                      <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"/>
+                                    </svg>
+                                </td>
+                              </tr>
+                            </table>  
+                            </div>
+                              
+                              <div id="testinput">
+                              <table class = "mt-2">
+                              <tr>
+                                <td class="statistics">$\text{Test Statistic: }$</td>
+                                <td class="statistics"><select onchange="switchzt()" id="teststat" class="hypinput1"> <option value="z"> z </option> </select></td>
+                                <td class="statistics"> = </td>
+                                <td class="statistics"><input type="text" style="width:60px;" id="testvalue" class="hypinput2"></td>
+                                <td class="statistics"></td>
+                                <td class="statistics">
+                                <svg onclick="switchvalues()" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-shuffle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"/>
+                                  <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"/>
+                                </svg>
+                                </td>
+                              </tr>
+                            </table>
+                                  <table class="mt-2" id = "degfreedom">
+                              <tr>
+                                <td class="statistics">$\text{Degrees of Freedom: } $</td>  
+                                <td class="statistics">$df$</td>
+                                <td class="statistics">=</td>
+                                <td class="statistics"><input type="text" style="width:50px;" id="degfreeval" class="hypinput2"></td>
+                              </tr>
+                                </table>
+                              </div>
+                              
+                              
+                              
+                              <table class = "mt-2">
+                              <tr>
+                                <td class="statistics">Level of Significance:</td>
+                                <td class="statistics" data-toggle="tooltip" data-placement="top" title="Level of Significance">$\alpha$</td>
+                                <td class="statistics"> = </td>
+                                <td class="statistics" style="text-align:left">
+                                    <select id="alpha" class="hypinputalpha" onchange="alphachange()"> <option value=".1"> .10 </option><option value=".05"  selected="selected"> .05 </option> <option value=".01"> .01 </option> <option value="other"> ⋯ </option> </select>
+                                    <input type="text" style="width:40px;" id="alphaval" class="hypinput2">
+                                  
+                                  </td>
+                                 
+                              </tr>
+                            </table> 
+                              
+                              
+                              
+                              </div>
+                     
+                          <div class="container" id="type2error">
+                            <div class = "container">
+                                <h5 class="text-center text-primary mb-3">Type II Error</h5>
+                            </div>
+                            <table>
+                              <tr>
+                                <td class="statistics" data-toggle="tooltip" data-placement="top" title="Null Hypothesis">$H_o$: </td>
+                                <td class="statistics">$\mu$</td> 
+                                <td class="statistics"> <select id="tailt" class="hypinput1" onchange="tailsignst()"> <option value="lower"> &#8805; </option> <option value="upper"> &#8804;     </option> <option value="two">=</option> </select></td>
+                                <td class="statistics"> <input type="text" style="width:40px;" id="muknott" class="hypinput2" oninput="muknotvalt()" placeholder=""></td>
+                    
+                              </tr>
+                              <tr>
+                                <td class="statistics" data-toggle="tooltip" data-placement="top" title="Alternative Hypothesis">$H_a$: </td>
+                                <td class="statistics"> $\mu$</td>
+                                <td class="statistics"> <span id = "lesst"> < </span> <span id = "greatert"> > </span> <span id = "notequalt"> &ne; </span></td>
+                                <td class="statistics" style="text-align:left">&thinsp; <span id = "muknotvaluet">$\mu_0$</span></td>
+                              </tr>
+                            </table>  
+                              
+                              <table class = "mt-2">
+                              <tr>
+                                <td class="statistics" data-toggle="tooltip" data-placement="top" title="Sample Size">$n$</td>
+                                <td class="statistics"> = </td>
+                                <td class="statistics"><input type="text" style="width:50px;" id="sizet" class="hypinput2"></td>
+                                <td class="statistics">&nbsp;</td>
+                                <td class="statistics" data-toggle="tooltip" data-placement="top" title="Population Standard Deviation" id="sd1t"> &#963; </td>
+                                <td class="statistics" id="sd2t"> = </td>
+                                <td class="statistics" id="sd3t"><input type="text" style="width:50px;" id="stdevt" class="hypinput2"></td>
+                                <td class="statistics">&nbsp;</td>
+                                <td class="statistics" data-toggle="tooltip" data-placement="top" title="Population Mean"><span id = "samplestat">$\mu$</span></td>
+                                <td class="statistics"> = </td>
+                                <td class="statistics"><input type="text" style="width:50px;" id="mut" class="hypinput2"></td>
+                              </tr>
+                            </table>
+                              
+                              <table class = "mt-2">
+                              <tr>
+                                <td class="statistics">Level of Significance:</td>
+                                <td class="statistics" data-toggle="tooltip" data-placement="top" title="Level of Significance">$\alpha$</td>
+                                <td class="statistics"> = </td>
+                                <td class="statistics" style="text-align:left"><select id="alphat" class="hypinputalpha"> <option value=".1"> .10 </option><option value=".05"  selected="selected"> .05 </option> <option value=".01"> .01 </option> </select></td>
+                              </tr>
+                            </table>
+                              </div>
+                    
+                              <div class="container center">
+                              <div class="row justify-content-center">
+                            <div class = "col-4 col-md-2 text-center mt-2">
+                                <button id = "hyptest" class="button btn-outline-primary" onclick="solve()">Solve</button>
+                                
+                            </div>
+                              </div>
+                                  </div>
+                          
+                          
+                          
+                        <div class="container">
+                          <hr>
+                              </div>
+                    
+                          <div class="container" id="how">
+                              
+                            <div id="how1" class="output" style="color: black">
+                                
+                                
+                                
+                            </div>
+                            <div id="how2" class="how" style="color: black">
+                              <p id="THP">Traditional hypothesis testing is a fundamental statistical method employed to draw conclusions about population parameters by analyzing sample data. The primary objective is to assess whether observed differences or effects are statistically significant or merely due to random variation.</p>
+                              <br>
+                              <p id="Steps" class = "p1">The first step in hypothesis testing is to calculate the test statistic. </p>
+                    
+                                  <table style="width:30%">
+                                    <tr>
+                                      
+                                    </tr>
+                                    <tr>
+                                      <td>Formula</td>  
+                                      <td>$ z = \dfrac{{x̄}-\mu_0}{\sigma/\sqrt{{\color{Black} n}}}  $</td>
+                                    </tr>
+                                  </table>
+                                <br>
+                                
+                                <p class = "p1">The test is then conducted using the test statistic. The specific actions performed in each method primarily rely on whether the hypothesis test is two-tailed, upper-tailed, or lower-tailed. Just taking a quick look at the alternative hypothesis will reveal the shape. A test with a lower tail is one with a less than sign in the alternative hypothesis; one with an upper tail is one with a larger than sign; and a two-tailed test is one with inequality. Click on > and choose < or = to change from a lower tail test to an upper tail or two-tailed test, respectively.</p>
+                                        
+                                <table style="width:100%">
+                                  <tr>
+                                    <td>Lower Tail Test</td>
+                                    <td>Upper Tail Test</td>
+                                    <td>Two-Tailed Test</td>
+                                  </tr>
+                                  <tr>
+                                    <td>$H_0 \colon \mu \geq \mu_0$</td>
+                                    <td>$H_0 \colon \mu \leq \mu_0$</td>
+                                    <td>$H_0 \colon \mu = \mu_0$</td>
+                                  </tr>
+                                  <tr>
+                                    <td>$H_a \colon \mu < \mu_0$</td>
+                                    <td>$H_a \colon \mu > \mu_0$</td>
+                                    <td>$H_a \colon \mu \neq \mu_0$</td>
+                                  </tr>
+                                </table>
+                                <br>
+                                
+                                <p class = "p1">The critical value in the traditional method is determined using the level of importance ($\alpha$). The value of the test statistic offering an area of $\alpha$ in the lower tail of the test statistic's sampling distribution is known as the critical value in a lower tail test. The value of the test statistic offering an area of $\alpha$ in the upper tail of the test statistic's sampling distribution is known as the crucial value in an upper tail test. The test statistic values that provide areas of $\alpha / 2$ in the lower and higher tail of the test statistic's sampling distribution are known as critical values in a two-tailed test.</p>
+                                        
+                                <table style="width:100%">
+                                  <tr>
+                                    <td>Lower Tail Test</td>
+                                    <td>Upper Tail Test</td>
+                                    <td>Two-Tailed Test</td>
+                                  </tr>
+                                  <tr>
+                                    <td>If $z \leq -z_\alpha$, reject $H_0$.</td>
+                                    <td>If $z \geq z_\alpha$, reject $H_0$.</td>
+                                    <td>If $z \leq -z_{\alpha/2}$ or $z \geq z_{\alpha/2}$, reject $H_0$.</td>
+                                  </tr>
+                                  <tr>
+                                    <td>If $t \leq -t_\alpha$, reject $H_0$.</td>
+                                    <td>If $t \geq t_\alpha$, reject $H_0$.</td>
+                                    <td>If $t \leq -t_{\alpha/2}$ or $t \geq t_{\alpha/2}$, reject $H_0$.</td>
+                                  </tr>
+                                </table>
+                              <br>
+                              
+                              <p id="xx" class = "p1">During the process of conducting a hypothesis test, the possibility of reaching an incorrect conclusion always exists, resulting in two distinct errors: Type I Error and Type II Error. Type I Error occurs when the null hypothesis is erroneously rejected despite being true. In an ideal scenario, we would prefer to correctly accept the null hypothesis when it is indeed true. Conversely, Type II Error transpires when the null hypothesis is mistakenly accepted when the alternative hypothesis is true. Ideally, we would like to accurately reject the null hypothesis when the alternative hypothesis holds true.</p>
+                                                      
+                                <table>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td colspan="2">Condition</td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td style = "border-right: thin solid; border-bottom: thin solid"></td>
+                                    <td style = "border-bottom: thin solid">$H_0$ True</td>
+                                    <td style = "border-bottom: thin solid">$H_a$ True</td>
+                                  </tr>
+                                  <tr>
+                                    <td rowspan="2">Conclusion</td>
+                                    <td style = "border-right: thin solid">Accept $H_0$</td>
+                                    <td>Correct</td>
+                                    <td>Type II Error</td>
+                                  </tr>
+                                  <tr>
+                                    <td style = "border-right: thin solid">Reject $H_0$</td>
+                                    <td>Type I Error</td>
+                                    <td>Correct</td>
+                                  </tr>
+                                </table>
+                              <br>
+                                
+                              
+                                
+                            </div>
+                          </div>
+                          
+                          <div id = "hypoutputs" style="font-family: Arial, Helvetica, sans-serif;">
+                    
+                         <div class="container">
+                            <div id="output1" class="output">
+                            </div>
+                          </div>
+                          
+                          <div class="container">
+                            <div id="output3" class="output">
+                            </div>
+                          </div>
+                              
+                          </div>
+                    
+                          
+                          
+                          
+                          
+                    
+                          
+                              <footer id="footer">
+                                  <div class="container" id="explanation">
+                                      <p  class="text-center" style="background-color:white"> 
+                    
+                                    </p>
+                                    <div class="collapse" id="collapseExample" data-parent="#explanation">
+                                      <div class="card card-body" id="descriptiontext">
+                    
+                                      </div>
+                                    </div>
+                                    <div class="collapse" id="collapseExample2" data-parent="#explanation">
+                                      <div class="card card-body" id="formulatext">
+                    
+                                      </div>
+                                    </div>
+                                    <div class="collapse" id="collapseExample3" data-parent="#explanation">
+                                      <div class="card card-body" id="explanationtext">
+                    
+                                      </div>
+                                    </div>
+                    
+                                          </div>
+                                  <div class="container">
+                                      <hr>
+                                  </div>
+                              </footer>
+                          
+                        
+                        <!-- Optional JavaScript -->
+                        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+                          <script src="hypothesis-testing.js"></script>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          <!-- Credits to StatsSolver 2024 -->
+                          <!-- No Infringement Intended -->
+                          
+                          
+                          
+                      
+                          
+        <div class="footers">PROTOSTATS 2024</div>
+
+</body>
+</html>
+
+  
